@@ -1,5 +1,3 @@
-import "./App.css";
-
 // pages
 import Home from "./pages/Home";
 
