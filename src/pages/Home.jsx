@@ -27,12 +27,10 @@ const Home = () => {
 
   return (
     <ImageGalleryContext.Provider value={value}>
-      <main className="bg-white">
-        <section className="text-2xl shadow-xl p-4 mt-10 top-[-0.5rem] font-semibold flex flex-col rounded-lg  mx-10 my-5 w-fit h-full">
-          <Header />
-          <CanvasGallery />
-        </section>
-      </main>
+      <section className="shadow-2xl p-1 font-semibold flex flex-col rounded-lg mx-72 my-1">
+        <Header />
+        <CanvasGallery />
+      </section>
     </ImageGalleryContext.Provider>
   );
 };
