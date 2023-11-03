@@ -4,14 +4,7 @@ const CanvasGallery = () => {
   return (
     <main>
       <GridLayout>
-        <AddImageButton />
-        <AddImageButton />
-        <AddImageButton />
-        <AddImageButton />
-        <AddImageButton />
-        <AddImageButton />
-        <AddImageButton />
-        <AddImageButton />
+        
         <AddImageButton />
       </GridLayout>
     </main>

@@ -1,12 +1,35 @@
+import { useContext } from "react";
 import DeleteButton from "../canvas/DeleteButton";
+import {ImageGalleryContext}  from "../../pages/Home";
 const Header = () => {
+  const { currentChecked } = useContext(ImageGalleryContext)
+  const isAnyImageSelected = currentChecked.length > 0;
   return (
-    <div className="transition-all duration-300 flex justify-between items-center relative mt-4 bottom-2">
-      <h1 className="flex sm:ml-4 justify-start gap-2 text-3xl items-center ">
-        <span className="hidden sm:block text-black"> Gallery </span>
+    <nav className="border-b-2 mb-8">
+      <h1 className="my-8 ms-8 font-semibold text-xl">
+        {isAnyImageSelected ? (
+          <label className="flex items-center">
+            <input
+              type="checkbox"
+              checked={isAnyImageSelected}
+              readOnly
+              className="w-5 h-4 mr-2"
+            />
+            {currentChecked.length} Files Selected
+          </label>
+        ) : (
+          "Gallery"
+        )}
       </h1>
-          <DeleteButton />
-    </div>
+      {isAnyImageSelected && (
+        <button
+          className="md:absolute top-8 right-8 text-red-500 font-semibold text-xl ms-8 hover:underline"
+          onClick={DeleteButton}
+        >
+          Delete files
+        </button>
+      )}
+    </nav>
   );
 };
 
