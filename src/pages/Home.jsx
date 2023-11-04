@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <ImageGalleryContext.Provider value={value}>
-      <section className="shadow-2xl p-1 font-semibold flex flex-col rounded-lg mx-72 my-1">
+      <section className="shadow-2xl p-1 font-semibold flex flex-col rounded-lg mx-72 my-1 w-fit h-full">
         <Header />
         <CanvasGallery />
       </section>
