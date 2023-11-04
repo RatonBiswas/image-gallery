@@ -4,6 +4,7 @@ import { ImageGalleryContext } from "../../pages/Home";
 const Header = () => {
   const { currentChecked } = useContext(ImageGalleryContext);
   const isAnyImageSelected = currentChecked.length > 0;
+  console.log('From Header : ', currentChecked);
   return (
     <div className="border-b-2 mb-8">
       <div className="flex flex-row justify-between items-center px-2 sm:px-3 md:px-4 lg:px-6 pt-6 py-3">
@@ -25,13 +26,14 @@ const Header = () => {
         </div>
       </div>
       {isAnyImageSelected && (
-        <button
-          onClick={DeleteButton}
-          type="button"
-          className="md:absolute top-8 right-80 font-medium inline-flex text-red-500 hover:underline"
-        >
-          Delete {currentChecked.length > 1 ? "files" : "file"}
-        </button>
+        <DeleteButton/>
+        // <button
+        //   onClick={DeleteButton}
+        //   type="button"
+        //   className="md:absolute top-8 right-80 font-medium inline-flex text-red-500 hover:underline"
+        // >
+        //   Delete {currentChecked.length > 1 ? "files" : "file"}
+        // </button>
       )}
     </div>
   );
