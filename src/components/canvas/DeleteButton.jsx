@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { ImageGalleryContext } from "../../pages/Home";
 import DeleteImageFromMedia from "../../utils/DeleteImageFromMedia";
+import { toast } from "react-toastify";
+
 
 const DeleteButton = () => {
   const { imageIndex, setCurrentChecked, currentChecked, setImageIndex } =
@@ -12,13 +14,21 @@ const DeleteButton = () => {
     // </button>
     <div>
       <button
-        onClick={() =>
+        onClick={() =>{
           DeleteImageFromMedia(
             imageIndex,
             currentChecked,
             setImageIndex,
             setCurrentChecked,
           )
+          // toast.success(`Deleted ${imageIndex} ${currentChecked.length > 1 ? "images" : "image"} Successfully`)
+          toast.success(
+            `Deleted ${currentChecked.length} ${
+              currentChecked.length === 1 ? 'image' : 'images' 
+            } Successfully`
+          )
+          setCurrentChecked([])
+        }
         }
         type="button"
         className="font-medium inline-flex items-center text-red-500 hover:underline focus:ring-2 focus:outline-none focus:ring-red-300 text-center rounded-md ring-offset-2"
